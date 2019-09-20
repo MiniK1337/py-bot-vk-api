@@ -44,7 +44,6 @@ class Keyboard:
                 )
                 formatted_row.append(btn_template)
                 btn_num += 1
-                print(btn_num)
             self.buttons.append(formatted_row)
 
         return json.dumps(dict(
