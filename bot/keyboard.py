@@ -30,9 +30,10 @@ class Keyboard:
         return self._dump_keyboard(buttons)
 
     def _dump_keyboard(self, buttons):
+        btn_num = 1
         for row in buttons:
             formatted_row = []
-            for btn_num, btn in enumerate(row, 1):
+            for btn in row:
                 btn_template = dict(
                     action = dict(
                         type = "text",
@@ -42,6 +43,8 @@ class Keyboard:
                     color = btn['color']
                 )
                 formatted_row.append(btn_template)
+                btn_num += 1
+                print(btn_num)
             self.buttons.append(formatted_row)
 
         return json.dumps(dict(
